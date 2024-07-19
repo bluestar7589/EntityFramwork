@@ -1,5 +1,6 @@
 using EntityFramework.Data;
 using EntityFramework.Models;
+using System.Text;
 
 namespace EntityFramework
 {
@@ -34,10 +35,37 @@ namespace EntityFramework
             List<Vendor> lstVendorMethod = context.Vendors.Where(v => v.VendorState == "CA")
                                                           .OrderBy(v => v.VendorName).ToList();
 
-            List<Vendor> lstVendorSyntax = (from v in context.Vendors 
-                                            where v.VendorState == "CA" 
-                                            orderby v.VendorName 
+            List<Vendor> lstVendorSyntax = (from v in context.Vendors
+                                            where v.VendorState == "CA"
+                                            orderby v.VendorName
                                             select v).ToList();
         }
+
+        private void btnSelectCondition_Click(object sender, EventArgs e)
+        {
+            using ApContext context = new ApContext();
+            // Anynomous type
+            List<VendorLocation> result = (from v in context.Vendors
+                         select new VendorLocation
+                            {VendorName = v.VendorName,
+                             VendorState =  v.VendorState,
+                             VendorCity =  v.VendorCity }).ToList();
+
+            StringBuilder strBuilder = new StringBuilder();
+            foreach (VendorLocation vendor in result)
+            {
+                strBuilder.Append($"{vendor.VendorName} is in {vendor.VendorCity} \n");
+            }
+            MessageBox.Show(strBuilder.ToString());
+        }
+    }
+
+    class VendorLocation 
+    {
+        public string VendorName { get; set; }
+
+        public string VendorState { get; set; }
+
+        public string VendorCity { get; set; }
     }
 }

@@ -30,7 +30,7 @@
         {
             btnSelectAllVendors = new Button();
             btnSelectCaliVendors = new Button();
-            button3 = new Button();
+            btnSelectCondition = new Button();
             lstResults = new ListView();
             SuspendLayout();
             // 
@@ -54,14 +54,15 @@
             btnSelectCaliVendors.UseVisualStyleBackColor = true;
             btnSelectCaliVendors.Click += btnSelectCaliVendors_Click;
             // 
-            // button3
+            // btnSelectCondition
             // 
-            button3.Location = new Point(46, 223);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnSelectCondition.Location = new Point(46, 223);
+            btnSelectCondition.Name = "btnSelectCondition";
+            btnSelectCondition.Size = new Size(340, 23);
+            btnSelectCondition.TabIndex = 2;
+            btnSelectCondition.Text = "Select VendorName, VendorCity, VendorState From Vendors";
+            btnSelectCondition.UseVisualStyleBackColor = true;
+            btnSelectCondition.Click += btnSelectCondition_Click;
             // 
             // lstResults
             // 
@@ -77,7 +78,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(937, 425);
             Controls.Add(lstResults);
-            Controls.Add(button3);
+            Controls.Add(btnSelectCondition);
             Controls.Add(btnSelectCaliVendors);
             Controls.Add(btnSelectAllVendors);
             Name = "Form1";
@@ -89,7 +90,7 @@
 
         private Button btnSelectAllVendors;
         private Button btnSelectCaliVendors;
-        private Button button3;
+        private Button btnSelectCondition;
         private ListView lstResults;
     }
 }
