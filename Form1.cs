@@ -27,5 +27,17 @@ namespace EntityFramework
             List<Vendor> lstVendorsQuery = new List<Vendor>();
             lstVendorsQuery = (from v in context.Vendors select v).ToList();
         }
+
+        private void btnSelectCaliVendors_Click(object sender, EventArgs e)
+        {
+            using ApContext context = new ApContext();
+            List<Vendor> lstVendorMethod = context.Vendors.Where(v => v.VendorState == "CA")
+                                                          .OrderBy(v => v.VendorName).ToList();
+
+            List<Vendor> lstVendorSyntax = (from v in context.Vendors 
+                                            where v.VendorState == "CA" 
+                                            orderby v.VendorName 
+                                            select v).ToList();
+        }
     }
 }

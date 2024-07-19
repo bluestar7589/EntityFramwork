@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             btnSelectAllVendors = new Button();
-            button2 = new Button();
+            btnSelectCaliVendors = new Button();
             button3 = new Button();
+            lstResults = new ListView();
             SuspendLayout();
             // 
             // btnSelectAllVendors
@@ -43,14 +44,15 @@
             btnSelectAllVendors.UseVisualStyleBackColor = true;
             btnSelectAllVendors.Click += btnSelectAllVendors_Click;
             // 
-            // button2
+            // btnSelectCaliVendors
             // 
-            button2.Location = new Point(46, 132);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnSelectCaliVendors.Location = new Point(46, 132);
+            btnSelectCaliVendors.Name = "btnSelectCaliVendors";
+            btnSelectCaliVendors.Size = new Size(290, 23);
+            btnSelectCaliVendors.TabIndex = 1;
+            btnSelectCaliVendors.Text = "Select * From Vendor Where VendorState= 'CA'";
+            btnSelectCaliVendors.UseVisualStyleBackColor = true;
+            btnSelectCaliVendors.Click += btnSelectCaliVendors_Click;
             // 
             // button3
             // 
@@ -61,13 +63,22 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
+            // lstResults
+            // 
+            lstResults.Location = new Point(404, 40);
+            lstResults.Name = "lstResults";
+            lstResults.Size = new Size(423, 249);
+            lstResults.TabIndex = 3;
+            lstResults.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(580, 425);
+            ClientSize = new Size(937, 425);
+            Controls.Add(lstResults);
             Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnSelectCaliVendors);
             Controls.Add(btnSelectAllVendors);
             Name = "Form1";
             Text = "Form1";
@@ -77,7 +88,8 @@
         #endregion
 
         private Button btnSelectAllVendors;
-        private Button button2;
+        private Button btnSelectCaliVendors;
         private Button button3;
+        private ListView lstResults;
     }
 }
