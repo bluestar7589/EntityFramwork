@@ -1,4 +1,4 @@
-namespace EntityFramwork
+namespace EntityFramework
 {
     internal static class Program
     {

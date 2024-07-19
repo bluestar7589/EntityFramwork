@@ -1,4 +1,4 @@
-﻿namespace EntityFramwork
+﻿namespace EntityFramework
 {
     partial class Form1
     {
