@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace EntityFramework.Models;
 
+[DebuggerDisplay("Name: {VendorName,nq} - Vendor State: {VendorState,nq}")]
 public partial class Vendor
 {
+    
+    public Vendor() => Invoices = new HashSet<Invoice>();
     public int VendorId { get; set; }
 
     public string VendorName { get; set; } = null!;
